@@ -1,0 +1,219 @@
+/*
+Site Name: 	    Site name
+Site URI: 		http://www.site.com
+Version: 		1.0
+Author: 		Obi Creative
+Author URI: 	http://www.obicreative.co.uk
+
+*/
+
+/*
+===========================
+CONTENTS:
+
+01 Sensible defaults
+02 Fonts / type
+03 Alignment
+04 Forms
+04 Grid
+05 Tables
+06 Useful classes
+07 Breakpoints
+===========================
+*/
+
+/* ---------------------------------------------------------------------------------------------------------- 
+01 SENSIBLE DEFAULTS ----------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+@import "css/normalize.css";
+
+div,
+article,
+section,
+header,
+footer,
+nav,
+li					{ position:relative; /* For absolutely positioning elements within containers (add more to the list if need be) */ }
+.group:after 		{ display:block; height:0; clear:both; content:"."; visibility:hidden; /* For clearing */ }
+body 				{ 
+	background:#fff;
+	font-family: 'open sans', Sans-serif;
+	font-size:16px;
+	color:#000000;
+	line-height:1.6em;
+	font-weight: 100
+	}
+::-moz-selection 	{ background:#ff0; color:#333; }
+::selection 		{ background:#ff0; color:#333; }
+
+p,
+pre { margin: .5em 0;}
+img { border:none; padding:0; margin:0; max-width:100%;height:auto;}
+a {text-decoration:none;border:0;color:#1b414e;}
+a:hover {text-decoration:underline;}
+
+.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}
+.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}
+* html .clearfix,*:first-child+html .clearfix{zoom:1}
+nav ul { padding:0; margin:0;}
+nav a {display: block; padding:.25em;}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+02 FONTS / TYPE -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { font-weight:100; line-height:1.1em; margin:.85em 0 .5em 0; }
+h1 { font-size:2.2em; }
+h2 { font-size:2em; }
+h3 { font-size:1.8em; }
+h4 { font-size:1.6em; margin:.5em 0 .5em 0; }
+h5 { font-size:1.4em; margin:.5em 0 .5em 0; }
+h6 { font-size:1.2em; margin:.5em 0 0em 0;}
+
+code { background-color: #e8e8e8; color:#2f79ba; font-family:"Courier New", Courier, monospace; display: block; padding:1em; border:solid 1px #ccc; margin: .5em 0; }
+blockquote { font-size:1.2em; font-style:italic; }
+
+/* ---------------------------------------------------------------------------------------------------------- 
+03 FORMS -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+form { margin:1em 0;}
+label { font-size: .86em; color:#666666; display: inline-block; padding:.5em 0 .25em 0;}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="password"] { width:100%; padding:.5em 2.5%; background-color:#fafafa; border:solid 1px #cccccc; display: inline-block; }
+input[type="submit"] { background-color:#999999; color:#ffffff; display: inline-block; border:solid 1px #cccccc; padding:.5em 1em; margin-top:.86em; font-weight: 700; -webkit-transition:.5s all; -moz-transition:.5s all; transition:.5s all; }
+input[type="submit"]:hover { text-decoration: none; background-color:#4a717a; }
+input[name="name"] { background:url(images/icons/name.jpg) no-repeat 5% center  #ffffff; padding-left: 20%; width:77.5%; }
+input[name="email"] { background:url(images/icons/mail.jpg) no-repeat 5% center  #ffffff; padding-left: 20%; width:77.5%; }
+input[name="address"] { background:url(images/icons/location.jpg) no-repeat 5% center  #ffffff; padding-left: 15%; width:82.5%;}
+textarea { width:100%; padding:1em 2.5%; background-color:#fafafa; border:solid 1px #cccccc; display: inline-block; }
+select {
+  background-color: white;
+  border: thin solid #999999;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #ffffff 50%),
+    linear-gradient(135deg, #ffffff 50%, transparent 50%),
+    linear-gradient(to right, #999999, #999999);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    100% 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2.5em 2.5em;
+  background-repeat: no-repeat;
+  width:100%;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+03 ALIGNMENT -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+.textright {text-align:right;}
+.textleft {text-align:left;}
+.textcenter {text-align:center;}
+.textjustify {text-align:justify;}
+.alignnone { float:none;}
+.aligncenter { display:block; margin:0 auto }
+.alignleft { float:left }
+.alignright { float:right }
+img.alignleft { margin: .4em 1em .4em 0;}
+img.alignright { margin:.4em 0 .4em 1em;}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+04  GRID -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.row:after { content: ""; display: table; clear: both; }
+
+.grid_1 { width: 8.3333333%; } 
+.grid_2 { width: 16.666666%; } 
+.grid_3 { width: 24.999999%; } 
+.grid_4 { width: 33.333332%; } 
+.grid_5 { width: 41.666665%; }
+.grid_6 { width: 50%; } 
+.grid_7 { width: 58.333331%; } 
+.grid_8 { width: 66.666664%; } 
+.grid_9 { width: 74.999997%; } 
+.grid_10 { width: 83.33333%; } 
+.grid_11 { width: 91.666663%; } 
+.grid_12 { width: 100%; }
+
+[class*='grid_'] { float: left; display: block; min-height: 1px; }
+
+/* Gutter grid */
+[class*='g_grid_'] { margin: 0 2% 1% 0; }
+[class*='g_grid_']:last-of-type { margin-right: 0; }
+
+.g_grid_1 { width: 6.5%; } 
+.g_grid_2 { width: 15%; } 
+.g_grid_3 { width: 23.5%; } 
+.g_grid_4 { width: 32%; } 
+.g_grid_5 { width: 40.5%; }
+.g_grid_6 { width: 49%; } 
+.g_grid_7 { width: 57.5%; } 
+.g_grid_8 { width: 66%; } 
+.g_grid_9 { width: 74.5%; } 
+.g_grid_10 { width: 83%; } 
+.g_grid_11 { width: 91.5%; } 
+.g_grid_12 { width: 100%; } 
+
+/* Container */
+.container{ width: 90%; max-width: 1200px; margin: auto; }
+
+
+/* ---------------------------------------------------------------------------------------------------------- 
+05  TABLES -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+table { width:100%; }
+table th { background:#999999; color:#ffffff; padding:.3em; border:solid 1px #ccc; }
+table td { padding:.3em; border:solid 1px #ccc; }
+table tr.alt { background: #f3f2f2 }
+table a { text-decoration: underline; }
+
+/* ---------------------------------------------------------------------------------------------------------- 
+06 USEFUL CLASSES --------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+.videoWrapper { position: relative; padding-bottom: 56.25%; padding-top: 0px; height: 0;margin-bottom: .5em}
+.videoWrapper iframe { position: absolute;top: 0;left: 0; width: 100%;height: 100%;background:transparent;}
+.wp-caption { border:1px solid #666; text-align:center; background:#ccc; padding:1em; margin:1em }
+.rounded { -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; }
+.lead { font-size: 1.2em; line-height: 1.4em }
+.error {color:#f00;}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+PROJECT CSS --------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------------------------------------------------------- 
+MEDIA QUERIES --------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width :650px) {
+	
+	[class*='grid_']:not(.fixgrid)  { width:100%; margin-right:0; }
+
+}
+
+
+

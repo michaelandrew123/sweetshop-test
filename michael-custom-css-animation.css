@@ -1,0 +1,207 @@
+body{
+    --delay-load-time: 300ms;
+    --nav-link-load-time: 500ms; 
+    --nav-load-delay: calc(var(--delay-load-time) + var(--nav-link-load-time));
+    --main-load-delay: calc(var(--nav-load-delay) + 300ms);
+    --grid-img-load: calc(var(--main-load-delay) + 300ms);
+}
+header{
+  animation: header-load var(--delay-load-time) ease-in-out;
+}
+
+nav li{
+    animation-name: nav-link-load;
+    animation-duration: var(--nav-load-delay);
+    animation-timing-function: ease-in;
+    animation-delay: var(--delay-load-time);
+    animation-fill-mode: forwards;
+    transform:scate(0);
+    opacity: 0;
+}
+
+nav li:first-child{ 
+    animation-name: nav-first-link-load;
+    transform: translateX(-1000%);
+}
+
+nav li:last-child{
+    animation-name: nav-last-link-load;
+    transform: translateY(-1000%);
+}
+
+
+img.img-banner{
+    animation: main-load 300ms ease-in var(--main-load-delay);
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+div.main-image-desc{
+    animation: main-load 300ms ease-in calc(var(--main-load-delay) + 300ms);
+    animation-fill-mode: forwards;
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.grid-row > .grid_3:first-child{
+    animation-name: grid-image-load;
+    animation-duration: calc(var(--delay-load-time) + 200ms);
+    animation-timing-function: ease-in;
+    animation-delay:  var(--grid-img-load);
+    animation-fill-mode: forwards;
+    transform:translateY(-200);
+    opacity: 0;  
+} 
+
+.grid-row > .grid_3:nth-child(2){
+    animation-name: grid-image-load;
+    animation-duration: calc(var(--delay-load-time) + 200ms);
+    animation-timing-function: ease-in;
+    animation-delay:  calc(var(--grid-img-load) + 200ms);
+    animation-fill-mode: forwards;
+    transform:translateY(-200);
+    opacity: 0;  
+} 
+
+.grid-row > .grid_3:nth-child(3){
+    animation-name: grid-image-load;
+    animation-duration: calc(var(--delay-load-time) + 200ms);
+    animation-timing-function: ease-in;
+    animation-delay:  calc(var(--grid-img-load) + 400ms);
+    animation-fill-mode: forwards;
+    transform:translateY(-200);
+    opacity: 0;  
+} 
+.grid-row > .grid_3:nth-child(4){
+    animation-name: grid-image-load;
+    animation-duration: calc(var(--delay-load-time) + 200ms);
+    animation-timing-function: ease-in;
+    animation-delay:  calc(var(--grid-img-load) + 600ms);
+    animation-fill-mode: forwards;
+    transform:translateY(-200);
+    opacity: 0;  
+} 
+
+
+.grid-row > .grid_12{
+    animation-name: nav-link-load;
+    animation-duration: calc(var(--delay-load-time) + 200ms);
+    animation-timing-function: ease-in;
+    animation-delay:  calc(var(--grid-img-load) + 800ms);
+    animation-fill-mode: forwards;
+    transform:translateY(-200);
+    opacity: 0;  
+} 
+
+footer{
+    animation-name: footer-load;
+    animation-duration: calc(var(--delay-load-time) + 200ms);
+    animation-timing-function: ease-in;
+    animation-delay:  calc(var(--grid-img-load) + 1000ms);
+    animation-fill-mode: forwards; 
+    opacity: 0;  
+} 
+
+
+@keyframes header-load{
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100%{
+        transform: translate(0);
+    }
+}
+@keyframes nav-link-load{
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    90%{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes nav-first-link-load{
+    0% {
+        transform: translateX(-1000%);
+        opacity: 0;
+    }
+
+    90%{
+        transform: translateX(50%);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes nav-last-link-load{
+    0% {
+        transform: translateX(1000%);
+        opacity: 0;
+    }
+
+    90%{
+        transform: translateX(50%);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes main-load{
+    0%{
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes grid-image-load{
+    0%{
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    80%{
+        transform: translateY(5%);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+ 
+}
+
+@keyframes footer-load{
+    0%{ 
+        opacity: 0;
+    } 
+    100%{ 
+        opacity: 1;
+    }
+ 
+}
+

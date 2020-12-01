@@ -1,0 +1,227 @@
+/*
+Site Name: 	    the-sweetshop
+Site URI: 		localhost
+Version: 		1.0 
+
+*/
+/*
+===========================
+CONTENTS:
+
+01 Init CSS
+02 Declare Variable
+03 Body Css
+04 GRID 
+05 First Grid Columns Header Tag
+06 Second Grid Columns Header Tag
+07 Third Grid Columns Header Tag
+08 Fourth Columns Header Tag
+09 Footer CSS
+10 Media Query/Mobile Responsive CSS
+===========================
+*/
+
+/* ---------------------------------------------------------------------------------------------------------- 
+01 Init CSS -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+02 Declare Variable -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+:root{
+    --main-padding: 10px; 
+    --main-margin: 10px; 
+    --border-radius: 20px;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+03 Body Css -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+body{
+    background-color: palevioletred; 
+    font-family: 'Lilita One', cursive; 
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------- 
+04 GRID -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+.grid-container{
+    display: grid;
+    min-height: 100vh; 
+    grid-template-columns: repeat(4 ,1fr); 
+    grid-template-rows: 0.4fr 0.2fr 1.6480fr 2fr 0.3fr; 
+}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+05 First Grid Columns -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+header{ 
+    grid-column: span 4;
+    color: #fff;  
+}
+header >div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 2%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+/* ---------------------------------------------------------------------------------------------------------- 
+06 Second Grid Columns-----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+nav{  
+    grid-column: span 4;  
+}
+ 
+nav >ul >li{
+    display: inline-block;  
+    padding: 5px;
+} 
+nav > ul > li > a{
+    text-decoration: none;
+}
+/*Hover nav*/
+nav a{
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: var(--border-radius);
+    padding: .25em 1em !important;
+}
+nav a:hover{
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    background-color: #fff;
+    color: #1b414e;
+}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+07 Third Grid Columns-----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+main{ 
+    grid-column: span 4;  
+    vertical-align: middle;
+} 
+.main-image{
+    color: #000;
+} 
+ 
+/* ---------------------------------------------------------------------------------------------------------- 
+08 Fourth Columns-----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+.grid-row{ 
+    grid-column: span 4;
+} 
+.grid-row > .grid_3{
+    padding-left: var(--main-padding);
+    padding-right: var(--main-padding);
+}
+.image-link{ 
+    background-color: #fff;
+} 
+.image-link > p:first-child{
+    padding-top: 20px;
+} 
+.price{
+    color:#2f79ba;
+}
+.add-to-cart{
+    padding-bottom: 20px;  
+}
+.add-to-cart a{
+    background-color:#971b1a ;
+    color:#fff;  
+    border-radius: var(--border-radius);
+    padding: .50em 1em !important;  
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+.add-to-cart a:hover{
+    text-decoration: none; 
+    background-color:#4a717a;
+} 
+
+
+/* ---------------------------------------------------------------------------------------------------------- 
+09 Footer CSS-----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+footer{ 
+    grid-column: span 4;
+    background-color: #5e345e;
+    color: #fff; 
+}
+.grid-row-desc{
+    padding: 1rem;
+    margin: 1rem; 
+}
+footer > div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+10 Media Query/Mobile Responsive CSS-----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+@media only screen and (max-width: 650px){
+    .grid-container{  
+        grid-template-columns: 1fr; 
+        grid-template-rows: 0.1fr 0.02fr 0.11fr 0.50fr 0.05fr; 
+    }  
+     
+    .grid_3 { width: 50% !important; }  
+
+}
+
+@media only screen and (max-width: 550px){ 
+    .grid-container{  
+        grid-template-columns: 1fr; 
+        grid-template-rows: 0.11fr 0.05fr 0.12fr 0.50fr 0.08fr; 
+    }  
+    .image-link img{
+        height: 200px;
+        width: 200px;
+    }
+    .grid_3 { width: 50% !important; }  
+
+}
+
+@media only screen and (max-width: 375px){ 
+    body{
+        font-size: 14px;
+
+    }
+    .grid-container{  
+        grid-template-columns: 1fr; 
+        grid-template-rows: 0.06fr 0.05fr 0.12fr 0.50fr 0.08fr; 
+    }  
+    .image-link img{
+        height: 200px;
+        width: 200px;
+    }
+    .grid_3 { width: 100% !important; }  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 { font-weight:100; line-height:1.1em; margin:.85em 0 .5em 0; }
+    h1 { font-size:2em; }
+    h2 { font-size:1.8em; }
+    h3 { font-size:1.6em; }
+    h4 { font-size:1.4em; margin:.5em 0 .5em 0; }
+    h5 { font-size:1.2em; margin:.5em 0 .5em 0; }
+    h6 { font-size:1em; margin:.5em 0 0em 0;}
+
+}
